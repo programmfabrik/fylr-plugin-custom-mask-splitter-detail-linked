@@ -1,0 +1,29 @@
+key,de-DE,R,en-US,R,da-DK,R,fi-FI,R,sv-SE,R,fr-FR,R,it-IT,R,es-ES,R
+detail.linked.mask.splitter.detail.spinner|icon,spinner,FALSE,spinner,FALSE,spinner,FALSE,spinner,FALSE,spinner,FALSE,spinner,FALSE,spinner,FALSE,spinner,FALSE
+detail.linked.mask.splitter.detail.spinner|text,Lädt...,FALSE,Loading...,FALSE,Indlæser...,FALSE,Ladataan…,FALSE,Laddar...,FALSE,Chargement...,FALSE,Loading...,FALSE,Loading...,FALSE
+detail.linked.mask.splitter.header.objecttype.title,%(objecttype)s,FALSE,%(objecttype)s,FALSE,%(objecttype)s,FALSE,%(objecttype)s (luotu automaattisesti),FALSE,%(objecttype)s (automatiskt genererad),FALSE,%(objecttype)s,FALSE,%(objecttype)s,FALSE,%(objecttype)s,FALSE
+detail.linked.mask.splitter.header.objecttype.field.title,,FALSE,%(field)s (in %(objecttype)s),FALSE,,FALSE,,FALSE,,FALSE,,FALSE,,FALSE,,FALSE
+detail.linked.mask.splitter.name,Anzeige von Verlinkungen,FALSE,Display of references,FALSE,Visning af referencer,FALSE,Linkkien näyttö,FALSE,Visning av länkar,FALSE,Affichage des références,FALSE,Display of references,FALSE,Display of references,FALSE
+detail.linked.mask.splitter.options.mode,Anzeigeart,FALSE,Mode,FALSE,Tilstand,FALSE,Näyttötapa,FALSE,Visningstyp,FALSE,Mode,FALSE,Mode,FALSE,Mode,FALSE
+detail.linked.mask.splitter.options.mode.short,Kurz,FALSE,Short,FALSE,Kort,FALSE,Lyhyt,FALSE,Kort,FALSE,Court,FALSE,Short,FALSE,Short,FALSE
+detail.linked.mask.splitter.options.mode.standard,Standard,FALSE,Standard,FALSE,Standard,FALSE,Oletus,FALSE,Standard,FALSE,Standard,FALSE,Standard,FALSE,Standard,FALSE
+detail.linked.mask.splitter.options.mode.text,Text,FALSE,Text,FALSE,Tekst,FALSE,Teksti,FALSE,Text,FALSE,Texte,FALSE,Text,FALSE,Text,FALSE
+detail.linked.mask.splitter.options.objecttypes,Objekttypen,FALSE,Object types,FALSE,Objekttype,FALSE,Objektityypit,FALSE,Objekttyper,FALSE,Types d'objets,FALSE,Objecttypes,FALSE,Objecttypes,FALSE
+detail.linked.mask.splitter.title|text,Anzeige von Verlinkungen,FALSE,Display of references,FALSE,Visning af referencer,FALSE,Linkkien näyttö,FALSE,Visning av länkar,FALSE,Affichage des références,FALSE,Display of references,FALSE,Display of references,FALSE
+detail.linked.mask.splitter.options.include_inherited,Vererbte Informationen einschließen,TRUE,Include Inherited Data,TRUE,,FALSE,Sisällytä peritty data,FALSE,Inkludera ärvd data,TRUE,Inclure les éléments hérités,FALSE,,FALSE,,FALSE
+detail.linked.mask.splitter.options.show_fields,Nach Feldern gruppieren,TRUE,Group by Fields,FALSE,,FALSE,Ryhmittele kenttien mukaan,FALSE,,FALSE,Grouper par champs,FALSE,,FALSE,,FALSE
+detail.linked.mask.splitter.options.sort_config,Sortierung,FALSE,Sorting,FALSE,,FALSE,Lajittelu,FALSE,,FALSE,Tri,FALSE,,FALSE,,FALSE
+detail.linked.mask.splitter.options.sort_config.objecttype,Objekttyp,FALSE,Object Type,FALSE,,FALSE,Objektityyppi,FALSE,,FALSE,Type d'objet,FALSE,,FALSE,,FALSE
+detail.linked.mask.splitter.options.sort_config.field,Feld,FALSE,Field,FALSE,,FALSE,Kenttä,FALSE,,FALSE,Champ,FALSE,,FALSE,,FALSE
+detail.linked.mask.splitter.options.sort_config.order,Reihenfolge,FALSE,Order,FALSE,,FALSE,Järjestys,FALSE,,FALSE,Ordre,FALSE,,FALSE,,FALSE
+detail.linked.mask.splitter.options.sort_field.default,Standard (Standardtext),FALSE,Default (Standard Text),FALSE,,FALSE,Oletus,FALSE,,FALSE,Par défaut (Texte standard),FALSE,,FALSE,,FALSE
+detail.linked.mask.splitter.options.sort_field.system_object_id,System-Objekt-ID,FALSE,System Object ID,FALSE,,FALSE,Järjestelmän objektitunnus,FALSE,,FALSE,ID de l'objet système,FALSE,,FALSE,,FALSE
+detail.linked.mask.splitter.options.sort_field.created,Erstellt,FALSE,Created,FALSE,,FALSE,Luotu,FALSE,,FALSE,Créé,FALSE,,FALSE,,FALSE
+detail.linked.mask.splitter.options.sort_field.last_modified,Zuletzt geändert,FALSE,Last Modified,FALSE,,FALSE,Muokattu viimeksi,FALSE,,FALSE,Dernière modification,FALSE,,FALSE,,FALSE
+detail.linked.mask.splitter.options.sort_order.asc,Aufsteigend,FALSE,Ascending,FALSE,,FALSE,Nouseva,FALSE,,FALSE,Croissant,FALSE,,FALSE,,FALSE
+detail.linked.mask.splitter.options.sort_order.desc,Absteigend,FALSE,Descending,FALSE,,FALSE,Laskeva,FALSE,,FALSE,Décroissant,FALSE,,FALSE,,FALSE
+detail.linked.mask.splitter.options.sort_field.standard_1,Standard A,FALSE,Standard A,TRUE,,FALSE,Oletus A,FALSE,,FALSE,Standard A,FALSE,,FALSE,,FALSE
+detail.linked.mask.splitter.options.sort_field.standard_2,Standard B,FALSE,Standard B,FALSE,,FALSE,Oletus B,FALSE,,FALSE,Standard B,FALSE,,FALSE,,FALSE
+detail.linked.mask.splitter.options.sort_field.standard_3,Standard C,FALSE,Standard C,FALSE,,FALSE,Oletus C,FALSE,,FALSE,Standard C,FALSE,,FALSE,,FALSE
+detail.linked.mask.splitter.options.sort_config.objecttype.empty,Objekttyp auswählen,FALSE,Select Object Type,FALSE,,FALSE,Valitse objektityyppi,FALSE,,FALSE,Sélectionner le type d'objet,FALSE,,FALSE,,FALSE
+detail.linked.mask.splitter.options.sort_field.last_updated,Zuletzt geändert,FALSE,Last Modified,FALSE,,FALSE,Muokattu viimeksi,FALSE,,FALSE,Dernière modification,FALSE,,FALSE,,FALSE

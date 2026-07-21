@@ -1,0 +1,21 @@
+# Build configuration for fylr-build-plugin — the explicit build description.
+# Delivered files are listed here; "check" (runs with every build) warns when
+# a manifest reference is missing from the build folder.
+# All features: https://github.com/programmfabrik/fylr-build-plugin
+
+server:
+  install:
+    - l10n
+
+webfrontend:
+  # CoffeeScript 1.x, compiled + concatenated in this order into
+  # plugin.webfrontend.url (webfrontend/custom-mask-splitter-detail-linked.js)
+  coffee1:
+    - webfrontend/DetailLinkedMaskSplitter.coffee
+  install:
+    - webfrontend/custom-mask-splitter-detail-linked.css
+
+loca:
+  - csv: l10n/custom-mask-splitter-detail-linked.csv
+    sheet: 1Z3UPJ6XqLBp-P8SUf-ewq4osNJ3iZWKJB83tc6Wrfn0
+    gid: "1166028267"

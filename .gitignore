@@ -1,0 +1,4 @@
+/build
+*.coffee.js
+webfrontend/custom-mask-splitter-detail-linked.js
+.DS_Store

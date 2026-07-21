@@ -1,0 +1,19 @@
+plugin:
+  name: fylr-plugin-custom-mask-splitter-detail-linked
+  version: "1.0"
+  url: https://github.com/programmfabrik/fylr-plugin-custom-mask-splitter-detail-linked
+  l10n: l10n/custom-mask-splitter-detail-linked.csv
+  displayname:
+    de-DE: "Custom Mask Splitter: Anzeige von Verlinkungen"
+    en-US: "Custom Mask Splitter: Show References"
+  info:
+    de-DE: Custom Mask Splitter, der alle Objekte auflistet, die auf das im Detail angezeigte Objekt verweisen
+    en-US: Custom mask splitter that lists all objects referencing the object shown in the detail
+  server:
+    api-version:
+      require: 1
+  webfrontend:
+    url: custom-mask-splitter-detail-linked.js
+    css: custom-mask-splitter-detail-linked.css
+
+base_url_prefix: "webfrontend"

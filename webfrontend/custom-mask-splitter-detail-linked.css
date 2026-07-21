@@ -1,0 +1,5 @@
+/* styles of custom-mask-splitter-detail-linked */
+
+.ez5-detail-linked-mask-splitter-content .ez5-field-block-content:not(:last-child) {
+  margin-bottom: 13px;
+}
