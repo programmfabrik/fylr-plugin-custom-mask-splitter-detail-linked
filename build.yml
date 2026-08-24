@@ -8,10 +8,12 @@ server:
     - l10n
 
 webfrontend:
-  # CoffeeScript 1.x, compiled + concatenated in this order into
-  # plugin.webfrontend.url (webfrontend/custom-mask-splitter-detail-linked.js)
-  coffee1:
-    - webfrontend/DetailLinkedMaskSplitter.coffee
+  # assembled into plugin.webfrontend.url, in this order:
+  # .coffee is compiled (CoffeeScript 1.x), .scss compiled,
+  # anything else taken verbatim
+  bundles:
+    - sources:
+        - webfrontend/DetailLinkedMaskSplitter.coffee
   install:
     - webfrontend/custom-mask-splitter-detail-linked.css
 
