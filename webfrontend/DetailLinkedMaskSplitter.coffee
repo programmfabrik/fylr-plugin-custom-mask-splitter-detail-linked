@@ -228,21 +228,10 @@ class ez5.DetailLinkedMaskSplitter extends CustomMaskSplitter
 		showFields = @getDataOptions().show_fields
 
 		objecttypeManager = new ObjecttypeManager()
-		objecttypeManager.addObjecttypes((table, mask) =>
-			if table.name() not in objecttypes
-				return false
-			return mask.schema.is_preferred
-		)
+		objecttypeManager.addObjecttypes((table) => table.name() in objecttypes)
 
-		for field in objecttypeManager.getAllFields()
+		for field in @__getSearchableLinkFields(objecttypeManager, idTable)
 			columnSchema = field.ColumnSchema
-
-			if not @__hasColumnLinkToTable(columnSchema, idTable)
-				continue
-
-			if not @__isFieldSearchable(field)
-				continue
-
 			table = field.table.schema
 			table_name = table.name
 			fieldName = "#{table_name}.#{columnSchema.name}._global_object_id"
@@ -314,6 +303,7 @@ class ez5.DetailLinkedMaskSplitter extends CustomMaskSplitter
 						limit: 1000
 						format: mode
 						objecttypes: [objecttype]
+						best_mask_filter: false
 
 					if hasInheritedField
 						searchData.search = [
@@ -345,6 +335,7 @@ class ez5.DetailLinkedMaskSplitter extends CustomMaskSplitter
 								debug: "DetailMaskSplitterSearch"
 							json_data: searchData
 						searchPromise.done((result) =>
+							result.objects = @__uniqueObjects(result.objects)
 							result._fieldName = fieldName
 							result._fieldLocalizedName = fieldLocalizedNames[fieldName]
 							results.push(result)
@@ -356,6 +347,7 @@ class ez5.DetailLinkedMaskSplitter extends CustomMaskSplitter
 					limit: 1000
 					format: mode
 					objecttypes: [objecttype]
+					best_mask_filter: false
 
 				if inheritedLinkeds.length > 0
 					searchData.search = [
@@ -386,6 +378,7 @@ class ez5.DetailLinkedMaskSplitter extends CustomMaskSplitter
 						debug: "DetailMaskSplitterSearch"
 					json_data: searchData
 				searchPromise.done((result) =>
+					result.objects = @__uniqueObjects(result.objects)
 					results.push(result)
 				)
 
@@ -398,6 +391,14 @@ class ez5.DetailLinkedMaskSplitter extends CustomMaskSplitter
 		)
 
 		return dfr.promise()
+
+	# Without the best mask filter an object comes once per matching mask: keep one, the best mask if it matched.
+	__uniqueObjects: (objects = []) ->
+		objectsByGid = {}
+		for object in objects
+			if not objectsByGid[object._global_object_id] or object._best_mask
+				objectsByGid[object._global_object_id] = object
+		return Object.values(objectsByGid)
 
 	__getSortDataTableField: ->
 		getObjecttypeOptions = =>
@@ -517,19 +518,28 @@ class ez5.DetailLinkedMaskSplitter extends CustomMaskSplitter
 		objecttypes = []
 
 		objecttypeManager = new ObjecttypeManager(version: "HEAD")
-		objecttypeManager.addObjecttypes((table, mask) =>
-			return mask.schema.is_preferred
-		)
+		objecttypeManager.addObjecttypes()
 
-		for field in objecttypeManager.getAllFields()
-			columnSchema = field.ColumnSchema
-			if @__hasColumnLinkToTable(columnSchema, idTable) and @__isFieldSearchable(field)
-				objecttype = field.getMainMask().table.schema
-				if objecttype in objecttypes
-					continue
-				objecttypes.push(objecttype)
+		for field in @__getSearchableLinkFields(objecttypeManager, idTable)
+			objecttype = field.getMainMask().table.schema
+			if objecttype in objecttypes
+				continue
+			objecttypes.push(objecttype)
 
 		return objecttypes
+
+	# The search runs without the best mask filter, so a link searchable in any mask is enough.
+	__getSearchableLinkFields: (objecttypeManager, idTable) ->
+		fields = []
+		seen = {}
+		for field in objecttypeManager.getAllFieldsFromAllMasks()
+			if seen[field.identifier()]
+				continue
+			if not @__hasColumnLinkToTable(field.ColumnSchema, idTable) or not @__isFieldSearchable(field)
+				continue
+			seen[field.identifier()] = true
+			fields.push(field)
+		return fields
 
 	__getNestedLinkedFieldName: (table) ->
 		if not table
